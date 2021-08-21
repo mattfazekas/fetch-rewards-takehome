@@ -1,0 +1,27 @@
+Data Diagram Notes:
+
+Users table was fairly straightforward to create from source data. Only difference from the description I was given was
+the addition of a SignupSource column that includes text describing the source of the account, likely for marketing purposes.
+ID would be the unique identifer for this table, though duplicates exist.
+
+
+Brands table was mostly straightforward, although I broke out the cpg field into an ID and the reference. 
+From the data I was give, there is a missing link to connect brands with items on receipts. Notes I was given suggest the existence
+of a PartnerProducts table that would serve to join brand IDs to item IDs. The barcodes in the brand table don't correspond to products,
+nor should they - my interpretation is that the barcodes reference the actual *brand*, though based on my real life experience I'm not sure
+what these mean - do brands like Betty Crocker, Starbucks, Snapple share some segment of individual products among themselves? 
+Based on the data I was given, I don't define any relationships between the other tables in my model. 
+
+Technically, some CPG IDs are referenced within the receiptItems, but not in a way that makes sense to me 
+(ex: A record for a purchase of Annie's Mac & Cheese has a pointsPayerID and rewardsProductPartnerID that matches several cpgIDs in the 
+brands table, but the brand records aren't Annie's - so I feel like there's context I'm missing). 
+I imagine there is another table that details CPG info that I would use in a more refined model.
+
+
+The receipts table took the most work and I actually split this into 2 tables - a table for actual receipts, and a table for items on a 
+unique receipt. Receipts have a userID on them to join back to the users table, and the table keeps info about the sanned receipt as a whole.
+
+The receiptItem table is created from the data stored in rewardsReceiptItemList, as well as the ID of the receipt it came from, to join on.
+Here, a row is created for each item in the list, so there is a one-to-many relationship between receipts and receiptItems. Data was inconsistent
+and tough to work with in its given form, so the field list in my model isn't exhaustive. Many records in the lists don't share fields, 
+so more work would be required to fully account for all data present there.
