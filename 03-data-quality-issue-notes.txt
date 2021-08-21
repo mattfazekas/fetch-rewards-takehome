@@ -1,5 +1,9 @@
 SQL Query/Data Quality Notes
 
-On the bullet points to find average spend & total items purchased, compared between receipts with a 'rewardsReceiptStatus' of Accepted/Rejected, I found that there were not any statuses of 'Accepted' in the data I was given. It's possible that since I was just given a sample for my exercise, there weren't any receipts with that status by chance, I find it more likely that there's some misunderstanding as to what statuses are called in the database. In my note to the stakeholders, I will point this out and suggest that another status is what they are looking for.  
+On the bullet points to find average spend & total items purchased, compared between receipts with a 'rewardsReceiptStatus' of Accepted/Rejected, 
+I found that there were not any statuses of 'Accepted' in the data I was given. It's possible that since I was just given a sample for my exercise, 
+there weren't any receipts with that status by chance, I find it more likely that there's some misunderstanding as to what statuses are called in the 
+database. In my note to the stakeholders, I will point this out and suggest that another status is what they are looking for.  
 
-In my data, I found the following statuses: FLAGGED, FINISHED, PENDING, REJECTED, and SUBMITTED. I would suggest that FINISHED is equivalent to Accepted, just based on word definitions & all possible values, but I would be looking to validate that with someone closer to the data.
+In my data, I found the following statuses: FLAGGED, FINISHED, PENDING, REJECTED, and SUBMITTED. I would suggest that FINISHED is equivalent to 
+Accepted, just based on word definitions & all possible values, but I would be looking to validate that with someone closer to the data.
